@@ -1,45 +1,70 @@
+import Image from "next/image";
+
 export default function HowItWorks() {
   return (
-    <section className="px-8 py-16 bg-gray-50">
-      <h2 className="text-3xl font-extrabold mb-8">
-        <span className="text-primary">How it</span> <span className="text-gray-900">works.</span>
-      </h2>
+    <section className="bg-[#F9FAFB] px-6 py-20">
+      <div className="max-w-[1200px] mx-auto">
 
-      <div className="grid md:grid-cols-3 gap-6">
-        {[
-          "Fill in your details for your project",
-          "Receive quotes from Professionals",
-          "Compare your quotes and enjoy great savings",
-        ].map((text, i) => (
-          <div key={text} className="bg-white border border-gray-200 rounded-2xl p-8 text-center h-56 flex flex-col items-center justify-center">
-            <div className="mb-6">
-              {i === 0 && (
-                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M9 11V3h6v8" stroke="var(--brand-cyan)" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
-                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" stroke="var(--brand-cyan)" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              )}
-              {i === 1 && (
-                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4z" stroke="var(--brand-cyan)" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
-                  <path d="M4 20c0-3.31 2.69-6 6-6h0" stroke="var(--brand-cyan)" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              )}
-              {i === 2 && (
-                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M3 5h18v12H3z" stroke="var(--brand-cyan)" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
-                  <path d="M8 9h8" stroke="var(--brand-cyan)" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              )}
-            </div>
+        {/* ===== HEADING ===== */}
+        <h2 className="text-[36px] font-extrabold mb-14 ml-[45px] text-left">
+          <span className="text-[#00AFE3]">How it</span>{" "}
+          <span className="text-[#1F2933]">works.</span>
+        </h2>
 
-            <p className="font-extrabold text-gray-900 text-lg leading-tight max-w-xs">{text}</p>
+        {/* ===== CARDS ===== */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-16">
+
+          {/* Card 1 */}
+          <div className="mx-auto w-[260px] h-[260px] bg-white border-2 border-[#DBDFE4] rounded-2xl flex flex-col items-center justify-center text-center px-6">
+            <Image
+              src="/asset/icons/form.svg"
+              alt="Fill details"
+              width={64}
+              height={64}
+              className="mb-7"
+            />
+            <p className="text-[20px] font-extrabold text-[#1F2933] leading-snug">
+              Fill in your details for your project
+            </p>
           </div>
-        ))}
-      </div>
 
-      <div className="text-center mt-8">
-        <button className="btn-success">Get Started</button>
+          {/* Card 2 */}
+          <div className="mx-auto w-[260px] h-[260px] bg-white border-2 border-[#DBDFE4] rounded-2xl flex flex-col items-center justify-center text-center px-6">
+            <Image
+              src="/asset/icons/quotes.svg"
+              alt="Receive quotes"
+              width={64}
+              height={64}
+              className="mb-7"
+            />
+            <p className="text-[20px] font-extrabold text-[#1F2933] leading-snug">
+              Receive quotes from Professionals
+            </p>
+          </div>
+
+          {/* Card 3 */}
+          <div className="mx-auto w-[260px] h-[260px] bg-white border-2 border-[#DBDFE4] rounded-2xl flex flex-col items-center justify-center text-center px-6">
+            <Image
+              src="/asset/icons/compare.svg"
+              alt="Compare quotes"
+              width={64}
+              height={64}
+              className="mb-7"
+            />
+            <p className="text-[20px] font-extrabold text-[#1F2933] leading-snug">
+              Compare your quotes and enjoy great savings
+            </p>
+          </div>
+
+        </div>
+
+        {/* ===== BUTTON ===== */}
+        <div className="mt-20 text-center">
+          <button className="bg-[#10C87B] text-white text-[15px] font-semibold px-15 py-2 rounded-full shadow-lg hover:opacity-90 transition">
+            Get Started
+          </button>
+        </div>
+
       </div>
     </section>
   );
